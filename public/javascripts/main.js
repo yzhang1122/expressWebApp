@@ -7,7 +7,7 @@ require.config({
     },
     paths: {
         jquery: '/scripts/jquery/dist/jquery.min',
-        underscore: '/scripts/backbone/node_modules/underscore/underscore-min',
+        underscore: '/scripts/underscore/underscore-min',
         backbone: '/scripts/backbone/backbone-min',
         HomeView: '/javascripts/HomeView',
         UsersView: '/javascripts/UsersView',

@@ -25,15 +25,28 @@ router.get('/', function (req, res, next) {
 });
 
 
-
 var books = [
     {id: 98, author: 'Stephen King', title: 'The Shining', year: 1977},
     {id: 99, author: 'George Orwell', title: 1949}];
+
+var bookId = 100;
 
 router.get('/books', function (request, response) {
     response.header('Access-Control-Allow-Origin', '*');
     console.log('In GET function ');
     response.json(books);
+
+});
+
+router.post('/books/', function (request, response) {
+
+    response.header('Access-Control-Allow-Origin', '*');
+
+    var book = request.body;
+    console.log('Saving book with the following structure ' + JSON.stringify(book));
+    book.id = bookId++;
+    books.push(book);
+    response.send(book);
 
 });
 
